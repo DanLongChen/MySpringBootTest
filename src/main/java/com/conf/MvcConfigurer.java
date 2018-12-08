@@ -1,6 +1,5 @@
 package com.conf;
 
-import com.interceptors.LoginHandlerInterceptor;
 import com.interceptors.SessionHandlerInterceptor;
 import com.resolver.MyLocaleResolver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         // TODO Auto-generated method stub
-        registry.addFormatter(new DateFormatter("yyyy-MM-dd HH:mm:ss"));
+        registry.addFormatter(new DateFormatter("yyyy-MM-dd"));//"yyyy-MM-dd HH:mm:ss"
     }
 
     // 定义uri到视图的映射
@@ -72,7 +71,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
             //SpringBoot已经做好静态资源映射，因此不需要对其进行排除
-            registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/", "/index", "/user/login");
+//            registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/", "/index", "/user/login");
         }
     }
 

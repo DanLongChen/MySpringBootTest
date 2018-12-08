@@ -1,9 +1,8 @@
 package com.controller;
 
+import com.exception.UserNotExistException;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -22,6 +21,16 @@ public class LoginController {
         }else{
             map.put("msg","用户名密码错误");
             return "index";
+        }
+    }
+
+    @GetMapping("/test/{id}")
+    @ResponseBody
+    public String hello(@PathVariable("id") Integer id){
+        if(id==0){
+            throw new UserNotExistException();
+        }else{
+            return "hello";
         }
     }
 }

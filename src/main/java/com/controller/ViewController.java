@@ -1,3 +1,4 @@
+/*
 package com.controller;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -11,10 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
+*/
 /**
  * @author:DanLongChen
  * @versioin:2018年11月21日上午10:26:47
- **/
+ **//*
+
 @PropertySource(value = {"classpath:person.properties"})
 @Controller
 @RequestMapping("/View")
@@ -52,3 +55,4 @@ public class ViewController {
     }
 
 }
+*/
